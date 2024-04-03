@@ -1,0 +1,25 @@
+// Colors
+$white: #ffffff;
+$catskill-white: #ecf1f7;
+
+$html-background: $catskill-white;
+$header-background: $catskill-white;
+
+// Breakpoints
+$screen-tablet: '(min-width: 768px)';
+$screen-desktop: '(min-width: 1200px)';
+
+// Sizes
+$height-header-mobile: 105px;
+$height-header-desktop: 80px;
+
+// Layout
+$width-conteiner: 1200px;
+$gap-conteiner: 40px;
+
+// Box-shadows
+$input-shadow: 0px 3px 10px 0px #a4a4a408,
+               0px 12px 40px 0px #00000008;
+
+// Z-indexes
+$z-index-header: 50;
