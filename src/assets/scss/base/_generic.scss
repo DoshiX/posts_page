@@ -1,10 +1,27 @@
 html {
+    font-size: 14px;
+
     background-color: $html-background;
+
+    @media #{$screen-desktop} {
+        font-size: 16px;
+    }
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-
     min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
