@@ -1,5 +1,5 @@
 <template>
-    <div class="cards">
+    <div class="cards" v-if="!loading">
         <div class="cards__item" v-for="item in cardData" :key="item.id">
             <CardComponent
                 :id="item.id"
@@ -9,6 +9,9 @@
             />
         </div>
     </div>
+    <div class="cards__loading" v-else>
+        <ProgressSpinner />
+    </div>
 </template>
 
 <script setup>
@@ -17,9 +20,12 @@ import CardComponent from '@/components/CardComponent.vue';
 const props = defineProps({
     cardData: {
         type: Array
+    },
+    loading: {
+        type: Boolean,
+        default: false
     }
-})
-
+});
 </script>
 
 <style scoped lang="scss">
@@ -50,6 +56,10 @@ const props = defineProps({
         @media #{$screen-desktop} {
             width: math.percentage(math.div(1,3));
         }
+    }
+
+    &__loading {
+        display: flex;
     }
 }
 </style>

@@ -1,5 +1,6 @@
 // Colors
 $white: #ffffff;
+$catskill-white-light: #f8fafc;
 $catskill-white: #ecf1f7;
 $dodger-blue: #3b82f6;
 $gray-chateau: #a8aeb0;
@@ -9,6 +10,8 @@ $header-background: $catskill-white;
 
 $card-title: $dodger-blue;
 $card-body: $gray-chateau;
+
+$paginator-background: $catskill-white-light;
 
 // Breakpoints
 $screen-tablet: '(min-width: 768px)';
@@ -24,6 +27,9 @@ $gap-conteiner: 40px;
 
 // Box-shadows
 $input-shadow: 0px 3px 10px 0px #a4a4a408,
+               0px 12px 40px 0px #00000008;
+
+$paginator-shadow: 0px 3px 10px 0px #a4a4a408,
                0px 12px 40px 0px #00000008;
 
 // Z-indexes

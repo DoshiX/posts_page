@@ -1,23 +1,47 @@
 <template>
     <div class="page">
-        <HeaderComponent v-model="searchAuthor" />
+        <HeaderComponent v-model="search" />
 
         <main class="page__content">
             <div class="page__container">
-                <CardsGroupComponent :cardData="posts" class="page__posts" />
+                <CardsGroupComponent
+                    class="page__posts"
+                    :cardData="filteredList"
+                    :loading="store.state.posts.loading"
+                />
             </div>
         </main>
+
+        <FooterComponent />
     </div>
 </template>
 
 <script setup>
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import CardsGroupComponent from '@/components/CardsGroupComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useStore } from 'vuex';
+const store = useStore();
 
-const searchAuthor = ref('');
-const posts = ref([]);
+const searchTarget = ref('');
+const search = computed({
+  get: () => { 
+    return searchTarget.value;
+  },
+  set: (val) => {
+    searchTarget.value = val;
+    store.commit('posts/setPage', 1);
+    store.commit('posts/setSearchValue', searchTarget.value);
+  }
+});
+
+const filteredList = computed(()=> {
+    const { filteredList } = store.getters['posts/filteredList'];
+    return filteredList;
+});
+
 </script>
 
 <style scoped lang="scss">
@@ -42,10 +66,10 @@ const posts = ref([]);
     }
 
     &__posts {
-        margin-bottom: 30px;
+        margin-bottom: 105px;
 
         @media #{$screen-desktop} {
-            margin-bottom: 20px;
+            margin-bottom: 80px;
         }
     }
 }

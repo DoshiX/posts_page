@@ -13,6 +13,7 @@
   ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
   ![Primevue](https://img.shields.io/badge/Primevue-green.svg?style=for-the-badge&logo=primevue)
   ![Axios](https://img.shields.io/badge/Axios-blue.svg?style=for-the-badge&logo=primevue)
+  ![Vuex 4](https://img.shields.io/badge/Vuex4-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 
 </div>
 
