@@ -43,7 +43,6 @@ export const postModule = ({
 
                 const finded = state.posts.filter(post => {
                     let autor = post.author;
-                    console.log(!autor.search(reg))
                         return !autor.search(reg);
                 });
 
